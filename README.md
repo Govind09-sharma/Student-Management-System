@@ -88,8 +88,5 @@ This project was created as a college-level project to practise:
 
 ## Author
 
-**Devashish Dixit**
+**Govind Sharma**
 
-## Repository
-
-[Student Management System on GitHub](https://github.com/DevashishDxt123/student-managemant-system)
