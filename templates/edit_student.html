@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student | Student Management System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #102a50;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 11px;
+            margin-top: 7px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+            background: #1769d2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #102a50;
+        }
+
+        .back {
+            display: block;
+            margin-top: 18px;
+            text-align: center;
+            color: #1769d2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Student</h1>
+
+        <form method="POST">
+            <label>Student Name</label>
+            <input type="text" name="name"
+                   value="{{ student['name'] }}" required>
+
+            <label>Roll Number</label>
+            <input type="text" name="roll_number"
+                   value="{{ student['roll_number'] }}" required>
+
+            <label>Email</label>
+            <input type="email" name="email"
+                   value="{{ student['email'] or '' }}">
+
+            <label>Course</label>
+            <input type="text" name="course"
+                   value="{{ student['course'] or '' }}">
+
+            <button type="submit">Update Student</button>
+        </form>
+
+        <a class="back" href="{{ url_for('view_students') }}">
+            Back to Students
+        </a>
+    </div>
+</body>
+</html>
